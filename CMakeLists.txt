@@ -33,10 +33,10 @@ qt_add_qml_module(apptest5
     VERSION 1.0
     QML_FILES
    qml/main.qml
-    qml/CalendarView.qml
-    qml/MetricDelegate.qml
+   qml/MetricDelegate.qml
    qml/NoteDelegate.qml
    qml/MetricChart.qml
+   qml/CalendarGrid.qml
 
 )
 

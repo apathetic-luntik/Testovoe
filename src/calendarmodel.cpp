@@ -10,9 +10,8 @@ CalendarModel::CalendarModel(QObject *parent)
 }
 
 int CalendarModel::rowCount(const QModelIndex &parent) const {
-  // объясни что и как делает эта функция?
   Q_UNUSED(parent)
-  return 35; // 5 недель * 7 дней
+  return 42; // 6 недель * 7 дней для корректного отображения
 }
 
 QVariant CalendarModel::data(const QModelIndex &index, int role) const {
@@ -26,8 +25,10 @@ QVariant CalendarModel::data(const QModelIndex &index, int role) const {
   int firstDayOfWeek = firstDay.dayOfWeek();
   if (firstDayOfWeek == 7)
     firstDayOfWeek = 0; // Неделя начинается с понедельника
-  // объясни зачем эта переменная, что она делает и чем она инициализирована?
-  QDate cellDate = firstDay.addDays(row - firstDayOfWeek + 1);
+  
+  // Начинаем с понедельника первой недели месяца
+  QDate startDate = firstDay.addDays(-firstDayOfWeek);
+  QDate cellDate = startDate.addDays(row);
 
   switch (role) {
   case DateRole:

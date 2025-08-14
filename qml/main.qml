@@ -26,15 +26,13 @@ ApplicationWindow {
 
         // Календарь
         Rectangle {
-            //сделать выравнивание по 7 дней
-            //добавить названия дней недели и название месяца
             Layout.fillWidth: true
-            Layout.preferredHeight: 300
+            Layout.preferredHeight: 320
             color: "white"
             border.color: "#e0e0e0"
             radius: 5
 
-            CalendarView {
+            CalendarGrid {
                 id: calendarView
                 anchors.fill: parent
                 anchors.margins: 10
@@ -62,7 +60,7 @@ ApplicationWindow {
 }
             Label {
                 id: nameDate
-                text: Qt.formatDate(calendarModel.getDate(), "dddd  -  dd.MM.yyyy ")
+                text: Qt.formatDate(calendarModel.getDate(), " dd.MM.yyyy ")
                 Layout.fillWidth: true
                 horizontalAlignment: Text.AlignHCenter
                 font.bold: true
