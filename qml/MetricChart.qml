@@ -8,11 +8,12 @@ Item {
     ColumnLayout {
         anchors.fill: parent
         spacing: 10
+        anchors.margins: 15
 
         // Заголовок графика
         Text {
             Layout.fillWidth: true
-            text: "график метрик"
+            text: "График метрик"
             font.pixelSize: 16
             font.bold: true
             horizontalAlignment: Text.AlignHCenter
@@ -83,10 +84,9 @@ Item {
                     }
                 }
 
-                // Текст "Нет данных"
                 Text {
                     anchors.centerIn: parent
-                    text: "Нет данных"
+                    text: "Нет метрик"
                     font.pixelSize: 14
                     color: "#999999"
                 }
@@ -102,8 +102,7 @@ Item {
                     model: metricModel ? metricModel.count : 0
                     delegate: Rectangle {
                         Layout.fillWidth: true
-                        height: 40
-
+                        height: 4
                         property var metricData: metricModel.get(index)
 
                         RowLayout {

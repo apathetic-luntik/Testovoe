@@ -14,9 +14,10 @@ Rectangle {
     radius: 5
     
     RowLayout {
-        anchors.fill: parent
+
         anchors.margins: 10
-        
+        Layout.fillWidth: true
+        Layout.fillHeight: true
         TextField {
             id: noteTextField
             Layout.fillWidth: true
@@ -28,6 +29,7 @@ Rectangle {
             }
         }
         
+        //крестик сделать полупрозрачным и вверху заметки
         Button {
             text: "×"
             onClicked: noteModel.deleteNote(model.id)

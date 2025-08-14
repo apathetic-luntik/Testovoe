@@ -35,26 +35,26 @@ QHash<int, QByteArray> NoteModel::roleNames() const {
 }
 
 void NoteModel::addNote(const QString &text, const QDate &date) {
-     // if (Database::instance().addNote(text, date)) {
-     //     loadNotesForDate(date);
-     // }
+     if (Database::instance().addNote(text, date)) {
+         loadNotesForDate(date);
+     }
 }
 
 void NoteModel::updateNote(int id, const QString &text) {
-     // if (Database::instance().updateNote(id, text)) {
-     //     loadNotesForDate(m_currentDate);
-     // }
+     if (Database::instance().updateNote(id, text)) {
+         loadNotesForDate(m_currentDate);
+     }
 }
 
 void NoteModel::deleteNote(int id) {
-     // if (Database::instance().deleteNote(id)) {
-     //     loadNotesForDate(m_currentDate);
-     // }
+     if (Database::instance().deleteNote(id)) {
+         loadNotesForDate(m_currentDate);
+     }
 }
 
 void NoteModel::loadNotesForDate(const QDate &date) {
   beginResetModel();
   m_currentDate = date;
-//   m_notes = Database::instance().getNotesForDate(date);
+  m_notes = Database::instance().getNotesForDate(date);
   endResetModel();
 }

@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
   QGuiApplication app(argc, argv);
 
   // Инициализация базы данных - создает файл calendar_tracker.db и таблицы
-  // Database::instance().init();
+ Database::instance().init();
 
   // Создание моделей данных для работы с календарем, метриками и заметками
   CalendarModel calendarModel;

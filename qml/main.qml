@@ -6,10 +6,15 @@ import QtQuick.Layouts 1.15
 ApplicationWindow {
     id: window
     visible: true
-    width: 800
-    height: 800
-    minimumWidth: 800
-    minimumHeight: 600
+    // сделать адаптивное окно под разные размеры
+    // сделать чтобы первоначально оно появлялось в левом верхнем углу
+    // но с 10% отступом от края экрана
+    width: 850
+    height: 700
+    minimumWidth: 850
+    minimumHeight: 700
+    maximumWidth: 850
+    maximumHeight: 700
     title: qsTr("Трекер дневной статистики")
     color: "#f5f5f5"
 
@@ -19,11 +24,10 @@ ApplicationWindow {
 
         spacing: 10
 
-        //при нажатии на день в календаре, менять панель под этот день
         // Календарь
         Rectangle {
             //сделать выравнивание по 7 дней
-
+            //добавить названия дней недели и название месяца
             Layout.fillWidth: true
             Layout.preferredHeight: 300
             color: "white"
@@ -38,6 +42,7 @@ ApplicationWindow {
         }
 
         // Панель управления
+        // выравнивание по самому длиному названию дню недели
         RowLayout {
             Layout.fillWidth: true
             Layout.preferredHeight: 40
@@ -56,6 +61,7 @@ ApplicationWindow {
             }
 }
             Label {
+                id: nameDate
                 text: Qt.formatDate(calendarModel.getDate(), "dddd  -  dd.MM.yyyy ")
                 Layout.fillWidth: true
                 horizontalAlignment: Text.AlignHCenter
@@ -74,7 +80,6 @@ ApplicationWindow {
             }
           }
         }
-        //График
 
     // График метрик
     Rectangle {
@@ -93,15 +98,12 @@ ApplicationWindow {
     }
 }
     ColumnLayout {
-
          spacing: 10
-
+         anchors.margins: 10
             // Заметки
             Rectangle {
                Layout.fillWidth: true
                Layout.fillHeight: true
-               // сделать высоту как половину рабочего окна
- //Layout.preferredHeight: parent.height/2
                color: "white"
                border.color: "#e0e0e0"
                radius: 5
@@ -110,15 +112,18 @@ ApplicationWindow {
                     anchors.fill: parent
                     anchors.margins: 10
                     spacing: 10
-
                     Label {
+                        id: nameNote
                         text: qsTr("Заметки")
                         font.bold: true
                         font.pixelSize: 16
                     }
 
                     ListView {
+                        Layout.fillHeight: true
                         model: noteModel
+                        ///прикреплять каждую полседующую заметку к низу предыдущей
+                        // когда заметок больше чем места, появляется скрол
                         delegate: NoteDelegate {}
 
                     }
@@ -129,7 +134,6 @@ ApplicationWindow {
 
                         TextField {
                             id: noteInput
-
                             placeholderText: qsTr("Введите заметку...")
                         }
 

@@ -3,8 +3,9 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
 GridView {
+    //чтобы было всегда по 7 в ряд
     id: calendarView
-    property int cellSize: Math.min(width / 7, height / 5)
+    property int cellSize: Math.min(width / 7, height / 6)
 
     model: calendarModel
     cellWidth: cellSize
@@ -16,7 +17,6 @@ GridView {
         width: calendarView.cellSize
         height: calendarView.cellSize
         color: {
-
             if (!isCurrentMonth) return "#f5f5f5"
             return color
         }
@@ -47,10 +47,15 @@ GridView {
         
         MouseArea {
             anchors.fill: parent
+
             onClicked: {
                 calendarModel.setDate(model.date)
                 metricModel.loadMetricsForDate(model.date)
                 noteModel.loadNotesForDate(model.date)
+                cellDelegate.border.color = "#b05759"
+                cellDelegate.border.width = 3
+                nameDate.text = Qt.formatDate(calendarModel.getDate(), "dddd  -  dd.MM.yyyy ")
+
             }
         }
     }

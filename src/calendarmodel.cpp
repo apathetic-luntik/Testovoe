@@ -40,29 +40,29 @@ QVariant CalendarModel::data(const QModelIndex &index, int role) const {
     return cellDate == QDate::currentDate();
   case AverageScoreRole: {
     // Получаем среднюю оценку за день
-           // auto metrics = Database::instance().getMetricsForDate(cellDate);
-           // if (metrics.isEmpty()) return 0.0;
+           auto metrics = Database::instance().getMetricsForDate(cellDate);
+           if (metrics.isEmpty()) return 0.0;
 
-           // double sum = 0;
-           // for (const auto& metric : metrics) {
-           //     sum += metric["value"].toInt();
-           // }
-           // return sum / metrics.size();
+           double sum = 0;
+           for (const auto& metric : metrics) {
+               sum += metric["value"].toInt();
+           }
+           return sum / metrics.size();
 
-    return 0.0;
+  //  return 0.0;
   }
   case ColorRole: {
-           // auto metrics = Database::instance().getMetricsForDate(cellDate);
-           // if (metrics.isEmpty()) return QColor(Qt::transparent);
+           auto metrics = Database::instance().getMetricsForDate(cellDate);
+           if (metrics.isEmpty()) return QColor(Qt::transparent);
 
-           // double sum = 0;
-           // for (const auto& metric : metrics) {
-           //     sum += metric["value"].toInt();
-           // }
-           // double average = sum / metrics.size();
-           // return getColorForScore(average);
+           double sum = 0;
+           for (const auto& metric : metrics) {
+               sum += metric["value"].toInt();
+           }
+           double average = sum / metrics.size();
+           return getColorForScore(average);
 
-    return QColor(Qt::transparent);
+    //return QColor(Qt::transparent);
   }
   default:
     return QVariant();

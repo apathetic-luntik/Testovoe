@@ -15,10 +15,13 @@ Rectangle {
     radius: 5
     
     RowLayout {
-        anchors.fill: parent
+
+        Layout.fillWidth: true
+        Layout.fillHeight: true
         anchors.margins: 10
-        
+
         Label {
+
             text: model.name
             Layout.fillWidth: true
             font.pixelSize: 14
@@ -36,6 +39,7 @@ Rectangle {
             }
         }
         
+        //сделать, чтобы только крестик был, без большой кнопки
         Button {
             text: "×"
             onClicked: metricModel.deleteMetric(model.id)
