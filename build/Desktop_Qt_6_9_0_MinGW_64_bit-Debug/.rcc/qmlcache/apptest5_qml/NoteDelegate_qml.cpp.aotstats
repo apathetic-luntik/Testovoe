@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 26,
-                        "durationMicroseconds": 946,
+                        "durationMicroseconds": 853,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "noteId",
                         "line": 6
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 448,
+                        "durationMicroseconds": 496,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "noteText",
                         "line": 7
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 510,
+                        "durationMicroseconds": 591,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 9
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 209,
+                        "durationMicroseconds": 251,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 17

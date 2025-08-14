@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 1590,
+                        "durationMicroseconds": 1789,
                         "errorMessage": "",
                         "functionName": "cellSize",
                         "line": 7
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 12,
-                        "durationMicroseconds": 1999,
+                        "durationMicroseconds": 2318,
                         "errorMessage": "Cannot access value for name calendarModel",
                         "functionName": "model",
                         "line": 9
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 257,
+                        "durationMicroseconds": 277,
                         "errorMessage": "",
                         "functionName": "cellWidth",
                         "line": 10
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 17,
-                        "durationMicroseconds": 201,
+                        "durationMicroseconds": 273,
                         "errorMessage": "",
                         "functionName": "cellHeight",
                         "line": 11
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 163,
+                        "durationMicroseconds": 181,
                         "errorMessage": "Cannot access value for name calendarView",
                         "functionName": "width",
                         "line": 16
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 17,
-                        "durationMicroseconds": 94,
+                        "durationMicroseconds": 102,
                         "errorMessage": "Cannot access value for name calendarView",
                         "functionName": "height",
                         "line": 17
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 16,
-                        "durationMicroseconds": 803,
+                        "durationMicroseconds": 905,
                         "errorMessage": "Cannot access value for name isCurrentMonth",
                         "functionName": "color",
                         "line": 18
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 9,
-                        "durationMicroseconds": 577,
+                        "durationMicroseconds": 654,
                         "errorMessage": "Cannot access value for name isToday",
                         "functionName": "color",
                         "line": 24
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 23,
-                        "durationMicroseconds": 501,
+                        "durationMicroseconds": 587,
                         "errorMessage": "Cannot access value for name isToday",
                         "functionName": "width",
                         "line": 28
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 20,
-                        "durationMicroseconds": 109,
+                        "durationMicroseconds": 1017,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "color",
                         "line": 36
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 104,
+                        "durationMicroseconds": 4978,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "visible",
                         "line": 38
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 247,
+                        "durationMicroseconds": 255,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 34
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 2554,
+                        "durationMicroseconds": 25744,
                         "errorMessage": "Cannot access value for name calendarModel",
                         "functionName": "onClicked",
                         "line": 50
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 227,
+                        "durationMicroseconds": 298,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 49

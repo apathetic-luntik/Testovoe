@@ -4,6 +4,7 @@
     <file alias="qml/CalendarView.qml">C:/Users/Admin/Documents/allTestovoe/Testovoe/qml/CalendarView.qml</file>
     <file alias="qml/MetricDelegate.qml">C:/Users/Admin/Documents/allTestovoe/Testovoe/qml/MetricDelegate.qml</file>
     <file alias="qml/NoteDelegate.qml">C:/Users/Admin/Documents/allTestovoe/Testovoe/qml/NoteDelegate.qml</file>
+    <file alias="qml/MetricChart.qml">C:/Users/Admin/Documents/allTestovoe/Testovoe/qml/MetricChart.qml</file>
   </qresource>
 </RCC>
 

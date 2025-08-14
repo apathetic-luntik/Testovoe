@@ -1,0 +1,252 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 23,
+                        "durationMicroseconds": 366,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 9
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 34,
+                        "durationMicroseconds": 167,
+                        "errorMessage": "",
+                        "functionName": "horizontalAlignment",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 26,
+                        "durationMicroseconds": 180,
+                        "errorMessage": "Cannot access value for name metricModel",
+                        "functionName": "visible",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 31,
+                        "durationMicroseconds": 92,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 32
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 238,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 39
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 34,
+                        "durationMicroseconds": 172,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 40
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 37,
+                        "durationMicroseconds": 163,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 41
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 183,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 37,
+                        "durationMicroseconds": 152,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 49
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 36,
+                        "durationMicroseconds": 133,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 50
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 86,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "y",
+                        "line": 60
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 35,
+                        "durationMicroseconds": 415,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "text",
+                        "line": 67
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 47,
+                        "durationMicroseconds": 87,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 66
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 61,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "y",
+                        "line": 80
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 39,
+                        "durationMicroseconds": 158,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 78
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 40,
+                        "durationMicroseconds": 129,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 79
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 39,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 88
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 26,
+                        "durationMicroseconds": 106,
+                        "errorMessage": "Cannot access value for name metricModel",
+                        "functionName": "visible",
+                        "line": 99
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 31,
+                        "durationMicroseconds": 110,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 97,
+                        "errorMessage": "Cannot access value for name metricModel",
+                        "functionName": "model",
+                        "line": 102
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 50,
+                        "durationMicroseconds": 86,
+                        "errorMessage": "Cannot access value for name metricModel",
+                        "functionName": "metricData",
+                        "line": 107
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 43,
+                        "durationMicroseconds": 80,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 110
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 39,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "Cannot access value for name metricData",
+                        "functionName": "text",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 56,
+                        "durationMicroseconds": 240,
+                        "errorMessage": "",
+                        "functionName": "preferredWidth",
+                        "line": 115
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 40,
+                        "durationMicroseconds": 182,
+                        "errorMessage": "Cannot access value for name metricData",
+                        "functionName": "color",
+                        "line": 122
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 44,
+                        "durationMicroseconds": 105,
+                        "errorMessage": "Cannot access value for name metricData",
+                        "functionName": "width",
+                        "line": 132
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 45,
+                        "durationMicroseconds": 111,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 133
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 44,
+                        "durationMicroseconds": 132,
+                        "errorMessage": "Cannot load property color from (component in C:/Users/Admin/Documents/allTestovoe/Testovoe/qml/MetricChart.qml)::parent with type QQuickItem.",
+                        "functionName": "color",
+                        "line": 134
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 39,
+                        "durationMicroseconds": 58,
+                        "errorMessage": "Cannot access value for name metricData",
+                        "functionName": "text",
+                        "line": 139
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 54,
+                        "durationMicroseconds": 148,
+                        "errorMessage": "",
+                        "functionName": "horizontalAlignment",
+                        "line": 141
+                    }
+                ],
+                "filepath": "C:/Users/Admin/Documents/allTestovoe/Testovoe/qml/MetricChart.qml"
+            }
+        ],
+        "moduleId": "test5(apptest5)"
+    }
+]

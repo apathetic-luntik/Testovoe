@@ -33,6 +33,13 @@ namespace _qt_qml_test5_qml_NoteDelegate_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_test5_qml_MetricChart_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -51,6 +58,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/test5/qml/CalendarView.qml"), &QmlCacheGeneratedCode::_qt_qml_test5_qml_CalendarView_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/test5/qml/MetricDelegate.qml"), &QmlCacheGeneratedCode::_qt_qml_test5_qml_MetricDelegate_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/test5/qml/NoteDelegate.qml"), &QmlCacheGeneratedCode::_qt_qml_test5_qml_NoteDelegate_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/test5/qml/MetricChart.qml"), &QmlCacheGeneratedCode::_qt_qml_test5_qml_MetricChart_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

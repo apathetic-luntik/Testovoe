@@ -38,21 +38,21 @@ QHash<int, QByteArray> MetricModel::roleNames() const {
 }
 
 void MetricModel::addMetric(const QString &name, int value, const QDate &date) {
-  //    if (Database::instance().addMetric(name, value, date)) {
-  //        loadMetricsForDate(date);
-  //    }
+     // if (Database::instance().addMetric(name, value, date)) {
+     //     loadMetricsForDate(date);
+     // }
 }
 
 void MetricModel::updateMetric(int id, int value) {
-  //    if (Database::instance().updateMetric(id, value)) {
-  //        loadMetricsForDate(m_currentDate);
-  //    }
+     // if (Database::instance().updateMetric(id, value)) {
+     //     loadMetricsForDate(m_currentDate);
+     // }
 }
 
 void MetricModel::deleteMetric(int id) {
-  //    if (Database::instance().deleteMetric(id)) {
-  //        loadMetricsForDate(m_currentDate);
-  //    }
+     // if (Database::instance().deleteMetric(id)) {
+     //     loadMetricsForDate(m_currentDate);
+     // }
 }
 
 void MetricModel::loadMetricsForDate(const QDate &date) {

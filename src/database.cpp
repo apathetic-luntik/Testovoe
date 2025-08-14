@@ -3,13 +3,13 @@
 #include <QDebug>
 #include <QDir>
 
-// Получение единственного экземпляра базы данных (Singleton pattern)
+// // Получение единственного экземпляра базы данных (Singleton pattern)
 // Database &Database::instance() {
 //  static Database instance;
 //  return instance;
-//}
+// }
 
-////// Инициализация базы данных: создание файла и таблиц
+// ////// Инициализация базы данных: создание файла и таблиц
 // bool Database::init() {
 //  m_db = QSqlDatabase::addDatabase("QSQLITE");
 
@@ -39,9 +39,9 @@
 //             "date TEXT NOT NULL)");
 
 //  return true;
-//}
+// }
 
-//// Добавление новой метрики в базу данных
+// // Добавление новой метрики в базу данных
 // bool Database::addMetric(const QString &name, int value, const QDate &date) {
 //  QSqlQuery query;
 //  query.prepare("INSERT INTO metrics (name, value, date) VALUES (?, ?, ?)");
@@ -50,9 +50,9 @@
 //  query.addBindValue(date.toString(Qt::ISODate));
 
 //  return query.exec();
-//}
+// }
 
-//// Обновление значения существующей метрики
+// // Обновление значения существующей метрики
 // bool Database::updateMetric(int id, int value) {
 //  QSqlQuery query;
 //  query.prepare("UPDATE metrics SET value = ? WHERE id = ?");
@@ -60,18 +60,18 @@
 //  query.addBindValue(id);
 
 //  return query.exec();
-//}
+// }
 
-//// Удаление метрики из базы данных
+// // Удаление метрики из базы данных
 // bool Database::deleteMetric(int id) {
 //  QSqlQuery query;
 //  query.prepare("DELETE FROM metrics WHERE id = ?");
 //  query.addBindValue(id);
 
 //  return query.exec();
-//}
+// }
 
-//// Получение всех метрик для конкретной даты
+// // Получение всех метрик для конкретной даты
 // QList<QVariantMap> Database::getMetricsForDate(const QDate &date) {
 //  QList<QVariantMap> metrics;
 //  QSqlQuery query;
@@ -89,9 +89,9 @@
 //  }
 
 //  return metrics;
-//}
+// }
 
-//// Получение всех метрик из базы данных
+// // Получение всех метрик из базы данных
 // QList<QVariantMap> Database::getAllMetrics() {
 //  QList<QVariantMap> metrics;
 //  QSqlQuery query("SELECT id, name, value, date FROM metrics");
@@ -108,9 +108,9 @@
 //  }
 
 //  return metrics;
-//}
+// }
 
-//// Добавление новой заметки в базу данных
+// // Добавление новой заметки в базу данных
 // bool Database::addNote(const QString &text, const QDate &date) {
 //  QSqlQuery query;
 //  query.prepare("INSERT INTO notes (text, date) VALUES (?, ?)");
@@ -118,9 +118,9 @@
 //  query.addBindValue(date.toString(Qt::ISODate));
 
 //  return query.exec();
-//}
+// }
 
-//// Обновление текста существующей заметки
+// // Обновление текста существующей заметки
 // bool Database::updateNote(int id, const QString &text) {
 //  QSqlQuery query;
 //  query.prepare("UPDATE notes SET text = ? WHERE id = ?");
@@ -128,18 +128,18 @@
 //  query.addBindValue(id);
 
 //  return query.exec();
-//}
+// }
 
-//// Удаление заметки из базы данных
+// // Удаление заметки из базы данных
 // bool Database::deleteNote(int id) {
 //  QSqlQuery query;
 //  query.prepare("DELETE FROM notes WHERE id = ?");
 //  query.addBindValue(id);
 
 //  return query.exec();
-//}
+// }
 
-//// Получение всех заметок для конкретной даты
+// // Получение всех заметок для конкретной даты
 // QList<QVariantMap> Database::getNotesForDate(const QDate &date) {
 //  QList<QVariantMap> notes;
 //  QSqlQuery query;
@@ -156,4 +156,4 @@
 //  }
 
 //  return notes;
-//}
+// }

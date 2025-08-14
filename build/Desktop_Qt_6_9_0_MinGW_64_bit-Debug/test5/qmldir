@@ -4,4 +4,5 @@ prefer :/qt/qml/test5/
 CalendarView 1.0 qml/CalendarView.qml
 MetricDelegate 1.0 qml/MetricDelegate.qml
 NoteDelegate 1.0 qml/NoteDelegate.qml
+MetricChart 1.0 qml/MetricChart.qml
 

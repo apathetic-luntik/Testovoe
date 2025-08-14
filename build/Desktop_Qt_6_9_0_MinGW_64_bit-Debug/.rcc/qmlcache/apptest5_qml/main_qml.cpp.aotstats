@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 947,
+                        "durationMicroseconds": 360,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 35
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 339,
+                        "durationMicroseconds": 113,
                         "errorMessage": "Cannot retrieve a non-object type by ID: previous",
                         "functionName": "width",
                         "line": 46
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 25,
-                        "durationMicroseconds": 111,
+                        "durationMicroseconds": 46,
                         "errorMessage": "Cannot retrieve a non-object type by ID: previous",
                         "functionName": "height",
                         "line": 47
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 132,
+                        "durationMicroseconds": 61,
                         "errorMessage": "Cannot retrieve a non-object type by ID: next",
                         "functionName": "width",
                         "line": 65
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 25,
-                        "durationMicroseconds": 97,
+                        "durationMicroseconds": 44,
                         "errorMessage": "Cannot retrieve a non-object type by ID: next",
                         "functionName": "height",
                         "line": 66
@@ -93,27 +93,43 @@
                     },
                     {
                         "codegenSuccessfull": true,
-                        "column": 35,
-                        "durationMicroseconds": 219,
+                        "column": 26,
+                        "durationMicroseconds": 121,
+                        "errorMessage": "",
+                        "functionName": "metricModel",
+                        "line": 91
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 27,
+                        "durationMicroseconds": 100,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 105
+                        "line": 89
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 35,
+                        "durationMicroseconds": 176,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 110
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 1878,
+                        "durationMicroseconds": 938,
                         "errorMessage": "Cannot access value for name noteModel",
                         "functionName": "model",
-                        "line": 116
+                        "line": 121
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 41,
-                        "durationMicroseconds": 645,
+                        "durationMicroseconds": 213,
                         "errorMessage": "",
                         "functionName": "bottom",
-                        "line": 122
+                        "line": 127
                     },
                     {
                         "codegenSuccessfull": false,
@@ -121,39 +137,39 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 133
+                        "line": 138
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 324,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 153
+                        "line": 158
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 32,
-                        "durationMicroseconds": 3629,
+                        "durationMicroseconds": 769,
                         "errorMessage": "Cannot access value for name metricModel",
                         "functionName": "model",
-                        "line": 165
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 41,
-                        "durationMicroseconds": 736,
-                        "errorMessage": "",
-                        "functionName": "bottom",
                         "line": 170
                     },
                     {
+                        "codegenSuccessfull": true,
+                        "column": 41,
+                        "durationMicroseconds": 151,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 175
+                    },
+                    {
                         "codegenSuccessfull": false,
                         "column": 40,
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 187
+                        "line": 192
                     }
                 ],
                 "filepath": "C:/Users/Admin/Documents/allTestovoe/Testovoe/qml/main.qml"

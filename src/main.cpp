@@ -27,7 +27,6 @@ int main(int argc, char *argv[]) {
 
   // Загрузка главного QML файла
   const QUrl url("qrc:/qt/qml/test5/qml/main.qml");
- // const QUrl url = QUrl::fromLocalFile("C:/Users/Admin/Documents/test5/qml/main.qml");
 
   QObject::connect(
       &engine, &QQmlApplicationEngine::objectCreated, &app,

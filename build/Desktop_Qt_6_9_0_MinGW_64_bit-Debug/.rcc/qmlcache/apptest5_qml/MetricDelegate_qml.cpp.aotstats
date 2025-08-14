@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 791,
+                        "durationMicroseconds": 797,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "metricId",
                         "line": 6
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 33,
-                        "durationMicroseconds": 473,
+                        "durationMicroseconds": 486,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "metricName",
                         "line": 7
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 480,
+                        "durationMicroseconds": 458,
                         "errorMessage": "Cannot access value for name model",
                         "functionName": "metricValue",
                         "line": 8
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 492,
+                        "durationMicroseconds": 835,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 10
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 224,
+                        "durationMicroseconds": 346,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 18

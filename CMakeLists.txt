@@ -4,7 +4,7 @@ project(test5 VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick)
+find_package(Qt6 REQUIRED COMPONENTS Quick Sql)
 
 set(PROJECT_SOURCES
     src/main.cpp
@@ -35,6 +35,7 @@ qt_add_qml_module(apptest5
     qml/CalendarView.qml
     qml/MetricDelegate.qml
    qml/NoteDelegate.qml
+   qml/MetricChart.qml
 
 )
 

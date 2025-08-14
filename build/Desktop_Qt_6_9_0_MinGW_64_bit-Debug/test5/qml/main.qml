@@ -7,7 +7,7 @@ ApplicationWindow {
     id: window
     visible: true
     width: 800
-    height: 600
+    height: 800
     minimumWidth: 800
     minimumHeight: 600
     title: qsTr("Трекер дневной статистики")
@@ -76,16 +76,21 @@ ApplicationWindow {
         }
         //График
 
-   Rectangle {
-       //Написать модель для отображения графика
-       // По y от 1 до 10
-       // По х название введенных пользовательских метрик
-       // В зависимости от значение пользовательской метрики рисуется прямоугольник на графике
-       // его цвет тоже зависит от знаяения пользовательской метрики
-       width: 100
-       height: 100
-       color: "red"
-       }
+    // График метрик
+    Rectangle {
+        Layout.fillWidth: true
+        Layout.preferredHeight: 300
+        color: "white"
+        border.color: "#e0e0e0"
+        radius: 5
+
+        MetricChart {
+            id: metricChart
+            anchors.fill: parent
+            anchors.margins: 10
+            metricModel: metricModel
+        }
+    }
 }
     ColumnLayout {
 
