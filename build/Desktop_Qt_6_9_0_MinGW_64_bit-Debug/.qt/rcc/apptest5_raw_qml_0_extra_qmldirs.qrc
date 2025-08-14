@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/test5/">
-    <file alias="qml/qmldir">C:/Users/Admin/Documents/allTestovoe/Testovoe/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/test5/qml/qmldir</file>
-  </qresource>
-</RCC>
-
