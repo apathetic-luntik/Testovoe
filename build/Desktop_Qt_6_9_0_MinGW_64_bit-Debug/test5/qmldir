@@ -1,0 +1,7 @@
+module test5
+typeinfo apptest5.qmltypes
+prefer :/qt/qml/test5/
+CalendarView 1.0 qml/CalendarView.qml
+MetricDelegate 1.0 qml/MetricDelegate.qml
+NoteDelegate 1.0 qml/NoteDelegate.qml
+

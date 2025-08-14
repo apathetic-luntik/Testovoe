@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/CalendarTracker">
-        <file>qml/main.qml</file>
-        <file>qml/CalendarView.qml</file>
-        <file>qml/MetricDelegate.qml</file>
-        <file>qml/NoteDelegate.qml</file>
-    </qresource>
-</RCC>

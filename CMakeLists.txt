@@ -1,18 +1,10 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.16)
 
-project(test1 VERSION 0.1 LANGUAGES CXX)
+project(test5 VERSION 0.1 LANGUAGES CXX)
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-
-set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick REQUIRED)
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick Sql REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Quick)
 
 set(PROJECT_SOURCES
     src/main.cpp
@@ -28,53 +20,42 @@ set(PROJECT_HEADERS
     src/database.h
 )
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(test1
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-        ${PROJECT_HEADERS}
-    )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET test1 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-else()
-    if(ANDROID)
-        add_library(test1 SHARED
-            ${PROJECT_SOURCES}
-              ${PROJECT_HEADERS}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(test1
-          ${PROJECT_SOURCES}
-           ${PROJECT_HEADERS}
-        )
-    endif()
-endif()
+qt_standard_project_setup(REQUIRES 6.8)
 
-target_compile_definitions(test1
-  PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(test1
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
+qt_add_executable(apptest5
+    ${PROJECT_SOURCES}
+    ${PROJECT_HEADERS}
+)
 
-set_target_properties(test1 PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
+qt_add_qml_module(apptest5
+    URI test5
+    VERSION 1.0
+    QML_FILES
+   qml/main.qml
+    qml/CalendarView.qml
+    qml/MetricDelegate.qml
+   qml/NoteDelegate.qml
+
+)
+
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+set_target_properties(apptest5 PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.example.apptest5
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
-if(QT_VERSION_MAJOR EQUAL 6)
-  qt_add_qml_module(test1
-      URI CalendarTracker
-      VERSION 1.0
-      QML_FILES
-          qml/main.qml
-          qml/CalendarView.qml
-          qml/MetricDelegate.qml
-          qml/NoteDelegate.qml
-  )
-endif()
+target_link_libraries(apptest5
+    PRIVATE Qt6::Quick
+)
+
+include(GNUInstallDirs)
+install(TARGETS apptest5
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
