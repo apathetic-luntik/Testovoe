@@ -6,26 +6,20 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
-// Главная точка входа в приложение
-// Инициализирует все компоненты и запускает главный цикл событий
 int main(int argc, char *argv[]) {
   QGuiApplication app(argc, argv);
 
-  // Инициализация базы данных - создает файл calendar_tracker.db и таблицы
  Database::instance().init();
 
-  // Создание моделей данных для работы с календарем, метриками и заметками
   CalendarModel calendarModel;
   MetricModel metricModel;
   NoteModel noteModel;
 
-  // Настройка QML движка и регистрация моделей в контексте QML
   QQmlApplicationEngine engine;
   engine.rootContext()->setContextProperty("calendarModel", &calendarModel);
   engine.rootContext()->setContextProperty("metricModel", &metricModel);
   engine.rootContext()->setContextProperty("noteModel", &noteModel);
 
-  // Загрузка главного QML файла
   const QUrl url("qrc:/qt/qml/test5/qml/main.qml");
 
   QObject::connect(

@@ -29,7 +29,6 @@ Rectangle {
             }
         }
         
-        //крестик сделать полупрозрачным и вверху заметки
         Button {
             text: "×"
             onClicked: noteModel.deleteNote(model.id)

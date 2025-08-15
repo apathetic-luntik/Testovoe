@@ -19,7 +19,7 @@ ApplicationWindow {
         anchors.margins: 10
 
         Component.onCompleted: {
-            // Выбор текущей даты при входе
+            // отображение данных текущей даты при входе
             calendarModel.selectToday()
             metricModel.loadMetricsForDate(calendarModel.getDate())
             noteModel.loadNotesForDate(calendarModel.getDate())
@@ -63,6 +63,7 @@ ApplicationWindow {
                     }
                     
                     Label {
+                        id: nameDate
                         text: Qt.formatDate(calendarModel.getDate(), "dd.MM.yyyy")
                         font.bold: true
                         horizontalAlignment: Text.AlignHCenter
@@ -72,6 +73,16 @@ ApplicationWindow {
                     Button {
                         text: "→"
                         onClicked: calendarModel.nextMonth()
+                    }
+                    
+                    Button {
+                        text: "Очистить"
+                        onClicked: {
+                            noteModel.clearAllNotes()
+                            metricModel.clearAllMetrics()
+                            calendarModel.selectToday()
+                            metricChart.updateChart()
+                        }
                     }
                 }
             }
@@ -199,3 +210,4 @@ ApplicationWindow {
         }
     }
 }
+

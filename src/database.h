@@ -2,6 +2,7 @@
 #define DATABASE_H
 
 #include <QDate>
+#include <QDir>
 #include <QDebug>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlError>
@@ -12,18 +13,22 @@ public:
     static Database &instance();
     bool init();
 
-    // Методы для работы с метриками
     bool addMetric(const QString &name, int value, const QDate &date);
     bool updateMetric(int id, int value);
     bool deleteMetric(int id);
     QList<QVariantMap> getMetricsForDate(const QDate &date);
     QList<QVariantMap> getAllMetrics();
 
-    // Методы для работы с заметками
+
     bool addNote(const QString &text, const QDate &date);
     bool updateNote(int id, const QString &text);
     bool deleteNote(int id);
     QList<QVariantMap> getNotesForDate(const QDate &date);
+    
+
+    bool clearAllMetrics();
+    bool clearAllNotes();
+    bool clearAllData();
 
 private:
     Database() = default;

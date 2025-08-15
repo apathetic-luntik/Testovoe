@@ -58,3 +58,9 @@ void NoteModel::loadNotesForDate(const QDate &date) {
   m_notes = Database::instance().getNotesForDate(date);
   endResetModel();
 }
+
+void NoteModel::clearAllNotes() {
+    if (Database::instance().clearAllNotes()) {
+        loadNotesForDate(m_currentDate);
+    }
+}

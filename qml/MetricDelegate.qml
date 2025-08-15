@@ -39,7 +39,6 @@ Rectangle {
             }
         }
         
-        //сделать, чтобы только крестик был, без большой кнопки
         Button {
             text: "×"
             onClicked: metricModel.deleteMetric(model.id)

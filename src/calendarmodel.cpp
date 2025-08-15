@@ -1,8 +1,6 @@
 #include "calendarmodel.h"
 #include "database.h"
-#include <QColor>
-#include <QDate>
-#include <QDebug>
+
 
 CalendarModel::CalendarModel(QObject *parent)
     : QAbstractListModel(parent), m_currentDate(QDate::currentDate()) {

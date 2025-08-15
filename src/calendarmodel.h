@@ -4,6 +4,7 @@
 #include <QAbstractListModel>
 #include <QColor>
 #include <QDate>
+#include <QDebug>
 
 class CalendarModel : public QAbstractListModel {
   Q_OBJECT
@@ -20,13 +21,12 @@ public:
 
   explicit CalendarModel(QObject *parent = nullptr);
 
-  // Переопределение методов QAbstractListModel
+
   int rowCount(const QModelIndex &parent = QModelIndex()) const override;
   QVariant data(const QModelIndex &index,
                 int role = Qt::DisplayRole) const override;
   QHash<int, QByteArray> roleNames() const override;
 
-  // Методы для работы с календарем
   Q_INVOKABLE void setDate(const QDate &date);
   Q_INVOKABLE QDate getDate() const;
   Q_INVOKABLE void previousMonth();

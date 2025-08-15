@@ -63,6 +63,11 @@ void MetricModel::loadMetricsForDate(const QDate &date) {
 }
 
 void MetricModel::addCustomMetric(const QString &name) {
-  // Заглушка для добавления пользовательских метрик
   Q_UNUSED(name)
+}
+
+void MetricModel::clearAllMetrics() {
+    if (Database::instance().clearAllMetrics()) {
+        loadMetricsForDate(m_currentDate);
+    }
 }
