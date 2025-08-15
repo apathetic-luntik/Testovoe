@@ -8,19 +8,23 @@ ApplicationWindow {
     title: qsTr("Трекер дневной статистики")
     color: "#f5f5f5"
     
-    // Компактные размеры для двухколоночной верстки
     width: 800
     height: 600
     minimumWidth: 600
     minimumHeight: 500
     
-    // Двухколоночная верстка
     RowLayout {
         id: mainLayout
         anchors.fill: parent
         anchors.margins: 10
-        
-        // Колонка 1: Календарь + панель управления + график
+
+        Component.onCompleted: {
+            // Выбор текущей даты при входе
+            calendarModel.selectToday()
+            metricModel.loadMetricsForDate(calendarModel.getDate())
+            noteModel.loadNotesForDate(calendarModel.getDate())
+        }
+
         ColumnLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -89,13 +93,12 @@ ApplicationWindow {
             }
         }
         
-        // Колонка 2: Заметки и метрики (ровно по половине)
         ColumnLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.preferredWidth: parent.width * 0.5
             
-            // Заметки (ровно 50% высоты)
+            // Заметки
             Rectangle {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
@@ -141,7 +144,7 @@ ApplicationWindow {
                 }
             }
             
-            // Метрики (ровно 50% высоты)
+            // Метрики
             Rectangle {
                 Layout.fillWidth: true
                 Layout.fillHeight: true

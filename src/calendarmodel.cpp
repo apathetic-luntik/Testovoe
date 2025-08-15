@@ -123,3 +123,8 @@ QColor CalendarModel::getColorForScore(double score) const {
 
   return QColor(red, green, 0);
 }
+
+void CalendarModel::selectToday() {
+  QDate today = QDate::currentDate();
+  setDate(today);
+}

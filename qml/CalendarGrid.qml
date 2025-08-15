@@ -6,7 +6,6 @@ ColumnLayout {
     id: calendarGrid
     spacing: 0
     
-    // Название месяца и года
     Rectangle {
         Layout.fillWidth: true
         Layout.preferredHeight: 30
@@ -23,7 +22,6 @@ ColumnLayout {
             color: "#333333"
         }
         
-        // Подключение к сигналу изменения даты
         Connections {
             target: calendarModel
             onCurrentDateChanged: {
@@ -31,8 +29,8 @@ ColumnLayout {
             }
         }
     }
-    
-    // Названия дней недели
+
+
     RowLayout {
         Layout.fillWidth: true
         spacing: 0

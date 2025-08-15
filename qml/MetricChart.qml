@@ -10,7 +10,6 @@ Item {
         spacing: 10
         anchors.margins: 15
 
-        // Заголовок графика
         Text {
             Layout.fillWidth: true
             text: "График метрик"
@@ -19,7 +18,6 @@ Item {
             horizontalAlignment: Text.AlignHCenter
         }
 
-        // Контейнер для графика
         Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true

@@ -33,6 +33,7 @@ public:
   Q_INVOKABLE void nextMonth();
   Q_INVOKABLE void previousYear();
   Q_INVOKABLE void nextYear();
+  Q_INVOKABLE void selectToday();
 
 signals:
   void currentDateChanged();
