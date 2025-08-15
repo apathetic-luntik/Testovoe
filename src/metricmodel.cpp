@@ -39,7 +39,7 @@ QHash<int, QByteArray> MetricModel::roleNames() const {
 
 void MetricModel::addMetric(const QString &name, int value, const QDate &date) {
      if (Database::instance().addMetric(name, value, date)) {
-         loadMetricsForDate(date);
+         loadMetricsForDate(m_currentDate);
      }
 }
 

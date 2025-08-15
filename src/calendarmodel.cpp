@@ -15,8 +15,6 @@ int CalendarModel::rowCount(const QModelIndex &parent) const {
 }
 
 QVariant CalendarModel::data(const QModelIndex &index, int role) const {
-
-  // объясни это условие и почему такой return?
   if (!index.isValid())
     return QVariant();
 
@@ -40,30 +38,25 @@ QVariant CalendarModel::data(const QModelIndex &index, int role) const {
   case IsTodayRole:
     return cellDate == QDate::currentDate();
   case AverageScoreRole: {
-    // Получаем среднюю оценку за день
-           auto metrics = Database::instance().getMetricsForDate(cellDate);
-           if (metrics.isEmpty()) return 0.0;
+    auto metrics = Database::instance().getMetricsForDate(cellDate);
+    if (metrics.isEmpty()) return 0.0;
 
-           double sum = 0;
-           for (const auto& metric : metrics) {
-               sum += metric["value"].toInt();
-           }
-           return sum / metrics.size();
-
-  //  return 0.0;
+    double sum = 0;
+    for (const auto& metric : metrics) {
+      sum += metric["value"].toInt();
+    }
+    return sum / metrics.size();
   }
   case ColorRole: {
-           auto metrics = Database::instance().getMetricsForDate(cellDate);
-           if (metrics.isEmpty()) return QColor(Qt::transparent);
+    auto metrics = Database::instance().getMetricsForDate(cellDate);
+    if (metrics.isEmpty()) return QColor(Qt::transparent);
 
-           double sum = 0;
-           for (const auto& metric : metrics) {
-               sum += metric["value"].toInt();
-           }
-           double average = sum / metrics.size();
-           return getColorForScore(average);
-
-    //return QColor(Qt::transparent);
+    double sum = 0;
+    for (const auto& metric : metrics) {
+      sum += metric["value"].toInt();
+    }
+    double average = sum / metrics.size();
+    return getColorForScore(average);
   }
   default:
     return QVariant();
@@ -85,6 +78,7 @@ void CalendarModel::setDate(const QDate &date) {
   if (m_currentDate != date) {
     m_currentDate = date;
     updateCalendar();
+    emit currentDateChanged();
   }
 }
 
@@ -93,21 +87,25 @@ QDate CalendarModel::getDate() const { return m_currentDate; }
 void CalendarModel::previousMonth() {
   m_currentDate = m_currentDate.addMonths(-1);
   updateCalendar();
+  emit currentDateChanged();
 }
 
 void CalendarModel::nextMonth() {
   m_currentDate = m_currentDate.addMonths(1);
   updateCalendar();
+  emit currentDateChanged();
 }
 
 void CalendarModel::previousYear() {
   m_currentDate = m_currentDate.addYears(-1);
   updateCalendar();
+  emit currentDateChanged();
 }
 
 void CalendarModel::nextYear() {
   m_currentDate = m_currentDate.addYears(1);
   updateCalendar();
+  emit currentDateChanged();
 }
 
 void CalendarModel::updateCalendar() {

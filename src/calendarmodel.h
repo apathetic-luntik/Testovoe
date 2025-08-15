@@ -9,7 +9,6 @@ class CalendarModel : public QAbstractListModel {
   Q_OBJECT
 
 public:
-  //зачем этот enum и что означают его поля?
   enum CalendarRoles {
     DateRole = Qt::UserRole + 1,
     DayNumberRole,
@@ -28,13 +27,15 @@ public:
   QHash<int, QByteArray> roleNames() const override;
 
   // Методы для работы с календарем
-  // Что означает эта директива предпроцессора и зачем она нужна тут?
   Q_INVOKABLE void setDate(const QDate &date);
   Q_INVOKABLE QDate getDate() const;
   Q_INVOKABLE void previousMonth();
   Q_INVOKABLE void nextMonth();
   Q_INVOKABLE void previousYear();
   Q_INVOKABLE void nextYear();
+
+signals:
+  void currentDateChanged();
 
 private:
   QDate m_currentDate;

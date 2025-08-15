@@ -15,11 +15,20 @@ ColumnLayout {
         border.width: 1
         
         Label {
+            id: labelMonth
             anchors.centerIn: parent
             text: qsTr(Qt.formatDate(calendarModel.getDate(), "MMMM yyyy"))
             font.bold: true
             font.pixelSize: 14
             color: "#333333"
+        }
+        
+        // Подключение к сигналу изменения даты
+        Connections {
+            target: calendarModel
+            onCurrentDateChanged: {
+                labelMonth.text = qsTr(Qt.formatDate(calendarModel.getDate(), "MMMM yyyy"))
+            }
         }
     }
     

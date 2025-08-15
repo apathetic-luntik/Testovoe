@@ -36,7 +36,7 @@ QHash<int, QByteArray> NoteModel::roleNames() const {
 
 void NoteModel::addNote(const QString &text, const QDate &date) {
      if (Database::instance().addNote(text, date)) {
-         loadNotesForDate(date);
+         loadNotesForDate(m_currentDate);
      }
 }
 

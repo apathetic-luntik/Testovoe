@@ -1,140 +1,135 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-//import CalendarTracker
 
 ApplicationWindow {
     id: window
     visible: true
-    // сделать адаптивное окно под разные размеры
-    // сделать чтобы первоначально оно появлялось в левом верхнем углу
-    // но с 10% отступом от края экрана
-    width: 850
-    height: 700
-    minimumWidth: 850
-    minimumHeight: 700
-    maximumWidth: 850
-    maximumHeight: 700
     title: qsTr("Трекер дневной статистики")
     color: "#f5f5f5"
-
+    
+    // Компактные размеры для двухколоночной верстки
+    width: 800
+    height: 600
+    minimumWidth: 600
+    minimumHeight: 500
+    
+    // Двухколоночная верстка
     RowLayout {
-
+        id: mainLayout
+        anchors.fill: parent
+        anchors.margins: 10
+        
+        // Колонка 1: Календарь + панель управления + график
         ColumnLayout {
-
-        spacing: 10
-
-        // Календарь
-        Rectangle {
             Layout.fillWidth: true
-            Layout.preferredHeight: 320
-            color: "white"
-            border.color: "#e0e0e0"
-            radius: 5
-
-            CalendarGrid {
-                id: calendarView
-                anchors.fill: parent
-                anchors.margins: 10
-            }
-        }
-
-        // Панель управления
-        // выравнивание по самому длиному названию дню недели
-        RowLayout {
-            Layout.fillWidth: true
-            Layout.preferredHeight: 40
-
+            Layout.fillHeight: true
+            Layout.preferredWidth: parent.width * 0.5
+            
+            // Календарь
             Rectangle {
-                width: previous.width + 10
-                height: previous.height
-                 // сделать так, чтобы был цвет как у всей панели
-                color: "#f5f5f5"
-            Button {
-                id: previous
-                text: qsTr("Предыдущий месяц")
-                onClicked: calendarModel.previousMonth()
-                anchors.centerIn: parent
-                anchors.margins: 10
-            }
-}
-            Label {
-                id: nameDate
-                text: Qt.formatDate(calendarModel.getDate(), " dd.MM.yyyy ")
                 Layout.fillWidth: true
-                horizontalAlignment: Text.AlignHCenter
-                font.bold: true
+                Layout.preferredHeight: parent.height * 0.5
+                color: "white"
+                border.color: "#e0e0e0"
+                radius: 5
+                
+                CalendarGrid {
+                    id: calendarView
+                    anchors.fill: parent
+                    anchors.margins: 5
+                }
             }
+            
+            // Панель управления
             Rectangle {
-                width: next.width + 10
-                height: next.height
-                 // сделать так, чтобы был цвет как у всей панели
-                color: "#f5f5f5"
-            Button {
-                 id: next
-                text: qsTr("Следующий месяц")
-                onClicked: calendarModel.nextMonth()
-                anchors.centerIn: parent
+                Layout.fillWidth: true
+                Layout.preferredHeight: 50
+                color: "#f0f0f0"
+                border.color: "#e0e0e0"
+                radius: 5
+                
+                RowLayout {
+                    anchors.fill: parent
+                    anchors.margins: 5
+                    
+                    Button {
+                        text: "←"
+                        onClicked: calendarModel.previousMonth()
+                    }
+                    
+                    Label {
+                        text: Qt.formatDate(calendarModel.getDate(), "dd.MM.yyyy")
+                        font.bold: true
+                        horizontalAlignment: Text.AlignHCenter
+                        Layout.fillWidth: true
+                    }
+                    
+                    Button {
+                        text: "→"
+                        onClicked: calendarModel.nextMonth()
+                    }
+                }
             }
-          }
-        }
-
-    // График метрик
-    Rectangle {
-        Layout.fillWidth: true
-        Layout.preferredHeight: 300
-        color: "white"
-        border.color: "#e0e0e0"
-        radius: 5
-
-        MetricChart {
-            id: metricChart
-            anchors.fill: parent
-            anchors.margins: 10
-            metricModel: metricModel
-        }
-    }
-}
-    ColumnLayout {
-         spacing: 10
-         anchors.margins: 10
-            // Заметки
+            
+            // График метрик
             Rectangle {
-               Layout.fillWidth: true
-               Layout.fillHeight: true
-               color: "white"
-               border.color: "#e0e0e0"
-               radius: 5
-
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                color: "white"
+                border.color: "#e0e0e0"
+                radius: 5
+                
+                MetricChart {
+                    id: metricChart
+                    anchors.fill: parent
+                    anchors.margins: 5
+                    metricModel: metricModel
+                }
+            }
+        }
+        
+        // Колонка 2: Заметки и метрики (ровно по половине)
+        ColumnLayout {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.preferredWidth: parent.width * 0.5
+            
+            // Заметки (ровно 50% высоты)
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.preferredHeight: parent.height * 0.5
+                color: "white"
+                border.color: "#e0e0e0"
+                radius: 5
+                
                 ColumnLayout {
                     anchors.fill: parent
-                    anchors.margins: 10
-                    spacing: 10
-                    Label {
-                        id: nameNote
+                    anchors.margins: 5
+                    
+                    Text {
                         text: qsTr("Заметки")
                         font.bold: true
-                        font.pixelSize: 16
+                        font.pixelSize: 14
+                        horizontalAlignment: Text.AlignHCenter
                     }
-
+                    
                     ListView {
                         Layout.fillHeight: true
+                        Layout.fillWidth: true
                         model: noteModel
-                        ///прикреплять каждую полседующую заметку к низу предыдущей
-                        // когда заметок больше чем места, появляется скрол
                         delegate: NoteDelegate {}
-
                     }
-
+                    
                     RowLayout {
-                        anchors.bottom: parent.bottom
-                        spacing: 5
-
+                        Layout.fillWidth: true
+                        
                         TextField {
                             id: noteInput
-                            placeholderText: qsTr("Введите заметку...")
+                            placeholderText: qsTr("Новая заметка...")
+                            Layout.fillWidth: true
                         }
-
                         Button {
                             text: qsTr("Добавить")
                             onClicked: {
@@ -145,50 +140,48 @@ ApplicationWindow {
                     }
                 }
             }
-
-            // Метрики
+            
+            // Метрики (ровно 50% высоты)
             Rectangle {
                 Layout.fillWidth: true
-               Layout.fillHeight: true
-                // сделать высоту как половину рабочего окна
-               // цвет не отображается и бордера тоже нет
+                Layout.fillHeight: true
+                Layout.preferredHeight: parent.height * 0.5
                 color: "white"
                 border.color: "#e0e0e0"
                 radius: 5
-
+                
                 ColumnLayout {
                     anchors.fill: parent
-                    anchors.margins: 10
-                    spacing: 10
-
-                    Label {
+                    anchors.margins: 5
+                    
+                    Text {
                         text: qsTr("Метрики")
                         font.bold: true
-                        font.pixelSize: 16
+                        font.pixelSize: 14
+                        horizontalAlignment: Text.AlignHCenter
                     }
-
+                    
                     ListView {
-                       Layout.fillHeight: true
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
                         model: metricModel
                         delegate: MetricDelegate {}
                     }
-
+                    
                     RowLayout {
-                        anchors.bottom: parent.bottom
-                        spacing: 5
-
+                        Layout.fillWidth: true
+                        
                         TextField {
                             id: metricNameInput
                             placeholderText: qsTr("Название метрики...")
+                            Layout.fillWidth: true
                         }
-
                         SpinBox {
                             id: metricValueInput
                             from: 1
                             to: 10
                             value: 5
                         }
-
                         Button {
                             text: qsTr("Добавить")
                             onClicked: {
@@ -201,5 +194,5 @@ ApplicationWindow {
                 }
             }
         }
-}
+    }
 }
